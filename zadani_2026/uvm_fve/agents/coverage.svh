@@ -10,10 +10,10 @@ class timer_t_coverage extends uvm_subscriber #(timer_t_transaction);
 
     // Covergroup definition
     covergroup FunctionalCoverage( string inst );
-        
+
         // 1. Coverpoint and bins for timer modes
-       mode_cp : coverpoint ivif.ctrl_reg_d[1:0]{
-            option.weight = 1;
+        mode_cp : coverpoint ivif.ctrl_reg_d[1:0] {
+            option.weight = 0;
             bins disabled     = {DISABLED};
             bins auto_restart = {AUTO_RESTART};
             bins one_shot     = {ONE_SHOT};
@@ -22,7 +22,7 @@ class timer_t_coverage extends uvm_subscriber #(timer_t_transaction);
 
         // 2. Coverpoint and bins for allowed requests
         req_cp : coverpoint m_transaction_h.REQUEST {
-            option.weight = 1;
+            option.weight = 0;
             bins req_none  = {CP_REQ_NONE};
             bins req_read  = {CP_REQ_READ};
             bins req_write = {CP_REQ_WRITE};
@@ -37,13 +37,14 @@ class timer_t_coverage extends uvm_subscriber #(timer_t_transaction);
 
         // 4. Transition coverpoint for reset transitions
         rst_trans_cp : coverpoint m_transaction_h.RST {
-            bins rise[] = (0 => 1);
-            bins fall[] = (1 => 0);
+            bins rise = (0 => 1);
+            bins fall = (1 => 0);
+            option.at_least = 5;
         }
 
         // 5. Address cover point
         addr_cp : coverpoint m_transaction_h.ADDRESS[7:0] {
-            option.weight = 1;
+            option.weight = 0;
 
             bins timer_cnt     = {TIMER_CNT};
             bins timer_cmp     = {TIMER_CMP};
@@ -52,19 +53,19 @@ class timer_t_coverage extends uvm_subscriber #(timer_t_transaction);
             bins timer_cycle_h = {TIMER_CYCLE_H};
         }
 
-        //6. Cross: address + WRITE + reset inactive
+        // 6. Cross: address + WRITE + reset inactive
         addr_write_cross : cross addr_cp, req_cp, rst_cp {
             ignore_bins ignore_other =
                 !binsof(req_cp.req_write) || !binsof(rst_cp.rst_inactive);
         }
 
-                // 7. Cross: address + READ + reset inactive
+        // 7. Cross: address + READ + reset inactive
         addr_read_cross : cross addr_cp, req_cp, rst_cp {
             ignore_bins ignore_other =
                 !binsof(req_cp.req_read) || !binsof(rst_cp.rst_inactive);
         }
 
-         // 8. Interrupt coverpoint
+        // 8. Interrupt coverpoint
         irq_cp : coverpoint m_transaction_h.P_IRQ {
             bins irq_0 = {0};
             bins irq_1 = {1};
@@ -74,8 +75,9 @@ class timer_t_coverage extends uvm_subscriber #(timer_t_transaction);
         irq_trans_cp : coverpoint m_transaction_h.P_IRQ {
             bins rise = (0 => 1);
             bins fall = (1 => 0);
+            option.at_least = 10;
         }
-    
+
         // 10. Cross: interrupt active in all modes except DISABLED
         irq_mode_cross : cross irq_cp, mode_cp {
             ignore_bins ignore_other =
@@ -85,8 +87,16 @@ class timer_t_coverage extends uvm_subscriber #(timer_t_transaction);
         // 11. Transition between modes
         mode_trans_cp : coverpoint ivif.ctrl_reg_d[1:0] {
             bins disabled_to_auto = (DISABLED => AUTO_RESTART);
+            bins disabled_to_one  = (DISABLED => ONE_SHOT);
+            bins disabled_to_cont = (DISABLED => CONTINOUS);
+            bins auto_to_disabled = (AUTO_RESTART => DISABLED);
             bins auto_to_one      = (AUTO_RESTART => ONE_SHOT);
+            bins auto_to_cont     = (AUTO_RESTART => CONTINOUS);
+            bins one_to_disabled  = (ONE_SHOT => DISABLED);
+            bins one_to_auto      = (ONE_SHOT => AUTO_RESTART);
             bins one_to_cont      = (ONE_SHOT => CONTINOUS);
+            bins cont_to_auto     = (CONTINOUS => AUTO_RESTART);
+            bins cont_to_one      = (CONTINOUS => ONE_SHOT);
             bins cont_to_disabled = (CONTINOUS => DISABLED);
         }
 

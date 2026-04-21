@@ -21,6 +21,8 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
     static logic [DATA_WIDTH-1:0] cnt_reg = 0;
     static logic [DATA_WIDTH-1:0] cmp_reg = 0;
     static logic [DATA_WIDTH-1:0] cmp_reg_buffer = 0;
+    static logic [1:0] pending_request = 0;
+    static logic [ADDR_WIDTH-1:0] pending_address = 0;
     logic [1:0] ctrl_reg = 0;
     logic [63:0] cycle_cnt = 0;
 
@@ -66,6 +68,7 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
 
     // implements behavior of the golden model
     local function automatic void predict(timer_t_transaction t);
+        logic [2:0] current_response;
 
         set_default_outputs(t);
 
@@ -77,55 +80,38 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
 
         t.RESPONSE = response_buffer;
         if (t.REQUEST == 2'b00)
-            response_buffer = 3'b000; // idle
+            current_response = 3'b000; // idle
 
         else if (t.REQUEST == 2'b11)
-            response_buffer =  3'b011; // error
+            current_response = 3'b011; // error
 
         else if (t.ADDRESS > 8'h14)
-            response_buffer =  3'b101; // out of range
+            current_response = 3'b101; // out of range
 
         else if (t.ADDRESS[1:0] != 2'b00)
-            response_buffer =  3'b100; // unaligned
+            current_response = 3'b100; // unaligned
 
         else
-            response_buffer =  3'b001; // acknowledge
+            current_response = 3'b001; // acknowledge
 
         if (t.RST == 0) begin
             cnt_reg      = 0;
             cmp_reg      = 0;
             ctrl_reg     = 0;
+            cycle_cnt    = 0;
+            response_buffer = 0;
+            pending_request = 0;
+            pending_address = 0;
         end
         else begin
-            
 
             //--------------------------------
-            // WRITE
+            // READ response from previous request
             //--------------------------------
 
-            if (t.REQUEST == 2'b10 && response_buffer  == 3'b001) begin
+            if (pending_request == 2'b01 && response_buffer == 3'b001) begin
 
-                case (t.ADDRESS)
-
-                    8'h00: cnt_reg  = t.DATA_IN;
-
-                    8'h04: cmp_reg  = t.DATA_IN;
-
-                    8'h08: ctrl_reg = t.DATA_IN[1:0];
-
-                    default: ;
-
-                endcase
-            end
-
-
-            //--------------------------------
-            // READ
-            //--------------------------------
-
-            if (t.REQUEST == 2'b01 && response_buffer == 3'b001) begin
-
-                case (t.ADDRESS)
+                case (pending_address)
 
                     8'h00: t.DATA_OUT = cnt_reg;
 
@@ -138,6 +124,25 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
                     8'h14: t.DATA_OUT = cycle_cnt[63:32];
 
                     default: t.DATA_OUT = 0;
+
+                endcase
+            end
+
+            //--------------------------------
+            // WRITE
+            //--------------------------------
+
+            if (t.REQUEST == 2'b10 && current_response == 3'b001) begin
+
+                case (t.ADDRESS)
+
+                    8'h00: cnt_reg  = t.DATA_IN;
+
+                    8'h04: cmp_reg  = t.DATA_IN;
+
+                    8'h08: ctrl_reg = t.DATA_IN[1:0];
+
+                    default: ;
 
                 endcase
             end
@@ -183,6 +188,10 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
                 endcase
         
             end
+
+            response_buffer = current_response;
+            pending_request = t.REQUEST;
+            pending_address = t.ADDRESS;
         end
 
     endfunction: predict

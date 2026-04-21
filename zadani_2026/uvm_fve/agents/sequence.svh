@@ -298,9 +298,15 @@ class timer_t_sequence_reset_stress extends timer_t_sequence;
 
         repeat (10) begin
             default_RST = RST_ACT_LEVEL;
+            default_ADDRESS = TIMER_CNT;
+            default_REQUEST = CP_REQ_NONE;
+            default_DATA_IN = 0;
             create_and_finish_item();
 
             default_RST = ~RST_ACT_LEVEL;
+            default_ADDRESS = TIMER_CNT;
+            default_REQUEST = CP_REQ_NONE;
+            default_DATA_IN = 0;
             create_and_finish_item();
         end
 

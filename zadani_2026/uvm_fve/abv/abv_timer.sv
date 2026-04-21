@@ -34,16 +34,16 @@ assert property (auto_restart_irq_p)
     else `uvm_error("ABV", "AUTO_RESTART: IRQ was not asserted when CNT == CMP");
 
 
-// [assert] Řídící signály (ADDRESS, REQUEST, RESPONSE a P_IRQ) nesmí mít nedefinované hodnoty (X,Z). 
-property pr_address_known;
+// [assert] Ridici signaly (ADDRESS, REQUEST, RESPONSE a P_IRQ) nesmi mit nedefinovane hodnoty (X,Z).
+property pr_control_known;
     @(posedge CLK)
     disable iff (RST !== RST_INACT_LEVEL)
 
-    !$isunknown(ADDRESS);
+    !$isunknown({ADDRESS, REQUEST, RESPONSE, P_IRQ});
 endproperty
 
-a_address_known: assert property (pr_address_known)
-    else `uvm_error("ABV", "ADDRESS contains X or Z");
+a_control_known: assert property (pr_control_known)
+    else `uvm_error("ABV", "Control signal contains X or Z");
 
 // [assert] Čtené (DATA_OUT) a zapisované (DATA_IN) data nesmí mít nedefinované hodnoty (X,Z). Vyhodnocení jen při operacích READ a WRITE! 
 property pr_data_in_known;
@@ -76,7 +76,7 @@ property pr_oor_response;
     disable iff (RST !== RST_INACT_LEVEL)
 
     ((REQUEST == CP_REQ_READ || REQUEST == CP_REQ_WRITE) &&
-     (ADDRESS > 8'h14))
+     (ADDRESS > TIMER_CYCLE_H))
 
     |=> (RESPONSE == CP_RSP_OOR);
 
@@ -95,7 +95,7 @@ property pr_unaligned_response;
     disable iff (RST !== RST_INACT_LEVEL)
 
     ((REQUEST == CP_REQ_READ || REQUEST == CP_REQ_WRITE) &&
-     (ADDRESS <= 8'h14) &&
+     (ADDRESS <= TIMER_CYCLE_H) &&
      (ADDRESS[1:0] != 2'b00))
 
     |=> (RESPONSE == CP_RSP_UNALIGNED);
@@ -104,6 +104,8 @@ endproperty
 
 a_unaligned_response: assert property (pr_unaligned_response)
     else `uvm_error("ABV", "UNALIGNED response not generated");
+
+c_unaligned_response: cover property (pr_unaligned_response);
 
 // [assert + cover] Kontrola zápisu a čtení v po sobě jdoucích cyklech na stejnou adresu. Pozn. Měla by se pročíst nově zapsaná data.  
 
@@ -116,17 +118,20 @@ property pr_write_read_same_addr;
     ($past(REQUEST) == CP_REQ_WRITE &&
      REQUEST == CP_REQ_READ &&
 
-     // stejná adresa
-     ADDRESS == $past(ADDRESS))
+     // stejna adresa a read/write registr
+     ADDRESS == $past(ADDRESS) &&
+     (ADDRESS == TIMER_CNT || ADDRESS == TIMER_CMP || ADDRESS == TIMER_CR))
 
-    |-> (DATA_OUT == $past(DATA_IN));
+    |=> (($past(ADDRESS) == TIMER_CR) ?
+            (DATA_OUT == ($past(DATA_IN, 2) & 32'h3)) :
+            (DATA_OUT == $past(DATA_IN, 2)));
 
 endproperty
 
 a_write_read_same_addr: assert property (pr_write_read_same_addr)
     else `uvm_error("ABV", "Read data does not match previously written data");
 
-c_ack_response: cover property (pr_ack_response);
+c_write_read_same_addr: cover property (pr_write_read_same_addr);
 
 // [assert + cover] Při zápisu/čtení na/z správnou adresu v adresovém prostoru timeru je v dalším cyklu nastaven RESPONSE ACK. 
 
@@ -136,7 +141,7 @@ property pr_ack_response;
     disable iff (RST !== RST_INACT_LEVEL)
 
     ((REQUEST == CP_REQ_READ || REQUEST == CP_REQ_WRITE) &&
-     (ADDRESS <= 8'h14) &&              // není OOR
+     (ADDRESS <= TIMER_CYCLE_H) &&      // neni OOR
      (ADDRESS[1:0] == 2'b00))           // není UNALIGNED
 
     |=> (RESPONSE == CP_RSP_ACK);
@@ -145,6 +150,8 @@ endproperty
 
 a_ack_response: assert property (pr_ack_response)
     else `uvm_error("ABV", "ACK response not generated for valid access");
+
+c_ack_response: cover property (pr_ack_response);
 
 // [assert + cover] Odpověď na NONE REQUEST je vždy IDLE. 
 
