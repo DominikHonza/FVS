@@ -1,0 +1,32 @@
+# Local editor / assistant state
+.codex
+zadani_2026/.codex
+.vscode/sftp.json
+
+# Archives and local copies
+*.zip
+
+# Questa / ModelSim simulation artifacts
+work/
+transcript
+report.txt
+modelsim.ini
+*.wlf
+*.vcd
+*.fsdb
+*.ucdb
+*.log
+*.jou
+*.qdb
+*.qpg
+*.qtl
+
+# Coverage reports
+cov_html/
+covhtmlreport/
+htmlcov/
+
+# Temporary files
+*.tmp
+*.bak
+*~
