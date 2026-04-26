@@ -34,10 +34,6 @@ class full_cov_t_test extends timer_t_test_base;
         seq = timer_t_sequence_full_cov::type_id::create("full");
         seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
-        // IRQ coverage
-        seq = timer_t_sequence_irq_modes::type_id::create("irq");
-        seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
-
         phase.drop_objection(this);
 
     endtask

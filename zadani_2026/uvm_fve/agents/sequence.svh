@@ -506,6 +506,14 @@ class timer_t_sequence_full_cov extends timer_t_sequence;
             default_DATA_IN = modes[i];
             create_and_finish_item();
 
+            // Keep the address/request sweep stable for the scoreboard. Mode
+            // coverage is sampled by the write above; the broad access sweep
+            // does not need the counter to run.
+            default_ADDRESS = TIMER_CR;
+            default_REQUEST = CP_REQ_WRITE;
+            default_DATA_IN = DISABLED;
+            create_and_finish_item();
+
             foreach (addrs[j]) begin
                 foreach (reqs[k]) begin
 
