@@ -2,7 +2,7 @@
 .codex
 zadani_2026/.codex
 .vscode/sftp.json
-result.txt
+zadani_2026/uvm_fve/result.txt
 
 # Archives and local copies
 *.zip

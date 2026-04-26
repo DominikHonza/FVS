@@ -1,26 +1,25 @@
-# Verifikace modulu TIMER
+# TIMER Module Verification
 
-## Cíl verifikace
+## Verification Goal
 
-Cílem projektu bylo ověřit RTL implementaci timeru proti specifikaci v zadání. 
-Registry `cnt_reg`, `cmp_reg`, `ctrl_reg` a `cycle_cnt`, odpovědi na rozhraní, generování přerušení `P_IRQ`, reset a přechody mezi módy timeru `DISABLED`, `AUTO_RESTART`, `ONE_SHOT` a `CONTINOUS`.
+The goal of this project was to verify the RTL implementation of the timer against the assignment specification. The verification focused on registers `cnt_reg`, `cmp_reg`, `ctrl_reg` and `cycle_cnt`, bus interface responses, interrupt generation on `P_IRQ`, reset behavior, and transitions between the timer modes `DISABLED`, `AUTO_RESTART`, `ONE_SHOT` and `CONTINOUS`.
 
-## Verifikační plán
+## Verification Plan
 
-Byly ověřeny všechny módy timeru:
+All timer modes were verified:
 
-- `DISABLED`: čítač neběží a přerušení se negeneruje.
-- `AUTO_RESTART`: při shodě `cnt_reg == cmp_reg` se vygeneruje přerušení a čítač se nastaví na nulu.
-- `ONE_SHOT`: při shodě se vygeneruje přerušení, čítač se nastaví na nulu a timer přejde do `DISABLED`.
-- `CONTINOUS`: při shodě se vygeneruje přerušení a čítač pokračuje v běhu.
+- `DISABLED`: the counter does not increment and no interrupt is generated.
+- `AUTO_RESTART`: when `cnt_reg == cmp_reg`, an interrupt is generated and the counter is reset to zero.
+- `ONE_SHOT`: when the match occurs, an interrupt is generated, the counter is reset to zero and the timer switches to `DISABLED`.
+- `CONTINOUS`: when the match occurs, an interrupt is generated and the counter continues running.
 
-Na úrovni rozhraní byly ověřeny požadavky `CP_REQ_NONE`, `CP_REQ_READ`, `CP_REQ_WRITE` a `CP_REQ_RESERVED`, reakce `RESPONSE`, čtení a zápisy do všech registrových adres, přístup mimo adresový prostor, nezarovnané adresy a nevyužité zarovnané adresy v adresovém prostoru timeru.
+At the interface level, requests `CP_REQ_NONE`, `CP_REQ_READ`, `CP_REQ_WRITE` and `CP_REQ_RESERVED` were verified, including `RESPONSE` behavior, reads and writes to all register addresses, accesses outside the timer address space, unaligned addresses and unused aligned addresses inside the timer address space.
 
-Na strukturní úrovni byly sledovány statement, branch, condition a assertion coverage. Dodatečný test `addr_bus_branch_cover_t_test` byl přidán pro pokrytí větve čtení z nevyužité zarovnané adresy uvnitř adresového prostoru timeru.
+At the structural level, statement, branch, condition and assertion coverage were tracked. The additional test `addr_bus_branch_cover_t_test` was added to cover the read branch for an unused aligned address inside the timer address space.
 
-## Testy
+## Tests
 
-Použitá sada testů je uvedena v `test_lib/test_list`:
+The regression test set is listed in `test_lib/test_list`:
 
 - `timer_t_test`
 - `random_t_test`
@@ -34,44 +33,48 @@ Použitá sada testů je uvedena v `test_lib/test_list`:
 - `edge_cases_t_test`
 - `addr_bus_branch_cover_t_test`
 - `full_cov_t_test`
+- `formal_t_test`
+- `reg_t_test`
+- `muj_prvni_t_test`
+- `continous_t_test`
 
-Pseudonáhodný test používá omezení podle zadání:
+The additional regression tests cover the assertion/formal-oriented stress scenario, register model frontdoor access, a helper smoke scenario over the mode-setting sequences, and the compatibility alias for the misspelled continuous test name. Older superseded source files, such as `ADDR_BUS_BRANCH_COVER_TEST.svh`, `mujprvnitest.svh` and `mode_transition_test.svh`, are not used directly because their functionality is covered by the renamed or fixed tests listed above.
 
-- `RST`: neaktivní hodnota s váhou 20, aktivní hodnota s váhou 1.
-- `ADDRESS`: registry timeru mají váhy 7, 6, 5, 2, 2 a ostatní adresy jsou rozložené s váhou 1.
-- `REQUEST`: `NONE`, `READ`, `WRITE`, `RESERVED` mají váhy 10, 5, 5, 1.
-- `DATA_IN`: hodnota 0 má váhu 10, hodnoty 1 až 20 mají váhu 20 a vysoké hodnoty jsou rozložené s váhou 1.
+The pseudo-random test uses constraints according to the assignment:
 
-## Funkční pokrytí
+- `RST`: inactive value with weight 20, active value with weight 1.
+- `ADDRESS`: timer registers have weights 7, 6, 5, 2, 2 and all other addresses are distributed with weight 1.
+- `REQUEST`: `NONE`, `READ`, `WRITE`, `RESERVED` have weights 10, 5, 5, 1.
+- `DATA_IN`: value 0 has weight 10, values 1 to 20 have weight 20 and high values are distributed with weight 1.
 
-Sledovane body:
+## Functional Coverage
 
-- hodnoty resetu a přechody resetu,
-- adresy registrů,
-- typy požadavků,
-- hodnota a přechody `P_IRQ`,
-- přerušení v jednotlivých módech,
-- přechody mezi módy,
-- kombinace adresa/požadavek/reset/mód.
+The following coverage points were tracked:
 
-Některé základní coverpointy (`mode_cp`, `req_cp`, `addr_cp`) mají `option.weight = 0`. Hodnocené biny jsou pokryty pomocí přímých testů a doplňkových coverage sekvencí.
+- reset values and reset transitions,
+- register addresses,
+- request types,
+- `P_IRQ` value and transitions,
+- interrupt behavior in individual modes,
+- transitions between modes,
+- address/request/reset/mode combinations.
 
-## Formální tvrzení
+Some basic coverpoints (`mode_cp`, `req_cp`, `addr_cp`) have `option.weight = 0`. The evaluated bins are covered by directed tests and additional coverage-oriented sequences.
 
-ABV tvrzení kontrolují:
+## Formal Assertions
 
-- nepřítomnost `X/Z` hodnot na řídicích a datových signálech,
-- odpovědi `ACK`, `IDLE`, `ERROR`, `OOR`, `UNALIGNED`,
-- zákaz generování `WAIT`,
-- správné generování `P_IRQ`,
-- chování `AUTO_RESTART` při shodě čítače a komparační hodnoty,
-- korektní čtení po zápisu na stejnou adresu.
+The ABV assertions check:
 
-## Výsledky coverage reportů
+- absence of `X/Z` values on control and data signals,
+- `ACK`, `IDLE`, `ERROR`, `OOR` and `UNALIGNED` responses,
+- absence of `WAIT` response generation,
+- correct `P_IRQ` generation,
+- `AUTO_RESTART` behavior when the counter reaches the compare value,
+- correct read-after-write behavior for the same address.
 
-Implementovaná verifikační sada dosahuje téměř plného pokrytí, přičemž většina metrik (assertions, branches, conditions, statements) dosahuje 100 %. Funkční pokrytí pomocí covergroups je na úrovni 99,25 %. Zbývající nepokrytá část funkčního pokrytí (0,75 %) odpovídá kombinacím,
-které nebyly během testování aktivovány, pravděpodobně kvůli nízké pravděpodobnosti
-jejich výskytu v pseudo-náhodném testu. RTL kód i ABV tvrzení jsou plně pokryty.
+## Coverage Report Results
+
+The implemented verification suite achieves almost full coverage. Most metrics, including assertions, branches, conditions and statements, reach 100%. Functional coverage through covergroups reaches 99.25%. The remaining uncovered functional coverage, 0.75%, corresponds to combinations that were not activated during testing, most likely because of their low probability in the pseudo-random test. The RTL code and ABV assertions are fully covered.
 
 [![Cover ABV](media/cover_abv.png)](media/cover_abv.png)
 
@@ -81,16 +84,14 @@ jejich výskytu v pseudo-náhodném testu. RTL kód i ABV tvrzení jsou plně po
 
 [![Cover RTL](media/cover_rtl.png)](media/cover_rtl.png)
 
-## Opravy `timer_fvs.vhd`
+## Fixes in `timer_fvs.vhd`
 
-Původní implementace neodpovídala goldem modelu implementovaného podle specifikace.
-Proto byla upravena priorita odpovědí tak, aby odpovídala očekávanému chování modelu,
-i když se liší od textu zadání. Opravy na řádcích 85-95 (dle zadání).
+The original implementation did not match the golden model implemented according to the specification. Therefore, the response priority was adjusted to match the expected model behavior, even though this differs from the wording in the assignment. The relevant fixes are around lines 85-95.
 
-Během verifikace se ukázalo několik míst v RTL, která bylo potřeba srovnat s očekávaným chováním timeru. V `timer_fvs.vhd` je teď explicitně rozlišený NONE request `CP_REQ_NONE`, RESERVED request, nezarovnaná adresa, adresa mimo prostor timeru a běžný platný přístup s odpovědí `ACK`.
+During verification, several RTL details had to be aligned with the expected timer behavior. In `timer_fvs.vhd`, the design now explicitly distinguishes the NONE request `CP_REQ_NONE`, the RESERVED request, unaligned addresses, addresses outside the timer address space and valid accesses with the `ACK` response.
 
-Čtení a zápis do interních registrů jsou navázané až na platný `ACK`. Díky tomu se pro chybové požadavky, neplatné adresy nebo nezarovnané přístupy zbytečně nemění stav timeru. Zároveň se pokrylo chování nevyužité zarovnané adresy uvnitř adresového prostoru: přístup je potvrzený, ale čtená data zůstávají na výchozí hodnotě. Právě kvůli tomuto byl doplněn test `addr_bus_branch_cover_t_test`.
+Reads and writes to internal registers are gated by a valid `ACK`. This prevents invalid requests, invalid addresses and unaligned accesses from changing the timer state. The behavior of an unused aligned address inside the timer address space was also covered: the access is acknowledged, but the read data remains at the default value. This was the reason for adding the `addr_bus_branch_cover_t_test`.
 
-## Závěr
+## Conclusion
 
-Implementovaná verifikační sada pokrývá hlavní funkční scénáře timeru, okrajové stavy sběrnicového rozhraní, reset chování, všechny módy timeru a přechody mezi nimi. Scoreboard i ABV v posledním běhu nehlásí žádné chyby.
+The implemented verification suite covers the main timer functional scenarios, bus interface corner cases, reset behavior, all timer modes and transitions between them. In the latest run, neither the scoreboard nor ABV reported any errors.

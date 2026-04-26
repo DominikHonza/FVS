@@ -10,7 +10,7 @@ Reading pref.tcl
 #  run_on_error $errorInfo 
 # 1
 # QuestaSim-64 vcom 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:20:56 on Apr 26,2026
+# Start time: 17:35:29 on Apr 26,2026
 # vcom -explicit -93 -source "+cover=sbcef" -nowarn 13 -work work ../rtl/timer_fvs.vhd 
 # ** Note: (vcom-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Loading package STANDARD
@@ -19,10 +19,10 @@ Reading pref.tcl
 # -- Loading package NUMERIC_STD
 # -- Compiling entity timer
 # -- Compiling architecture RTL of timer
-# End time: 10:20:56 on Apr 26,2026, Elapsed time: 0:00:00
+# End time: 17:35:29 on Apr 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:20:56 on Apr 26,2026
+# Start time: 17:35:29 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+test_parameters.sv" test_parameters.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling package sv_param_pkg
@@ -31,10 +31,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:20:57 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:29 on Apr 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:20:57 on Apr 26,2026
+# Start time: 17:35:29 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+agents/./" agents/./sv_agent_pkg.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling package sv_timer_t_agent_pkg
@@ -44,10 +44,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:20:57 on Apr 26,2026, Elapsed time: 0:00:00
+# End time: 17:35:30 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:20:57 on Apr 26,2026
+# Start time: 17:35:30 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+golden_model/" golden_model/sv_golden_model_pkg.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling package sv_timer_t_gm_pkg
@@ -58,10 +58,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:20:58 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:31 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:20:58 on Apr 26,2026
+# Start time: 17:35:31 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+regmodel/" regmodel/registers_pkg.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling package registers_pkg
@@ -72,10 +72,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:20:59 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:31 on Apr 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:20:59 on Apr 26,2026
+# Start time: 17:35:32 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+env_lib/./" env_lib/./sv_env_pkg.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling package sv_timer_t_env_pkg
@@ -88,10 +88,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:21:00 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:32 on Apr 26,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:21:00 on Apr 26,2026
+# Start time: 17:35:32 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+test_lib/./" test_lib/./sv_test_pkg.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling package sv_timer_t_test_pkg
@@ -105,10 +105,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:21:00 on Apr 26,2026, Elapsed time: 0:00:00
+# End time: 17:35:33 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:21:00 on Apr 26,2026
+# Start time: 17:35:33 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+agents/./" agents/./ifc.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # ** Note: (vlog-2286) agents/./ifc.sv(1): Using implicit +incdir+/mnt/data/tools/questa/questasim.2025/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
@@ -121,10 +121,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	--none--
-# End time: 10:21:01 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:34 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:21:01 on Apr 26,2026
+# Start time: 17:35:34 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+abv/./" abv/./abv_timer.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # ** Note: (vlog-2286) abv/./abv_timer.sv(1): Using implicit +incdir+/mnt/data/tools/questa/questasim.2025/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
@@ -135,10 +135,10 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	abv_timer
-# End time: 10:21:02 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:35 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2025.3 Compiler 2025.09 Sep 15 2025
-# Start time: 10:21:02 on Apr 26,2026
+# Start time: 17:35:35 on Apr 26,2026
 # vlog -sv -source -work work "+incdir+top_level.sv" top_level.sv 
 # ** Note: (vlog-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # -- Compiling module top
@@ -152,11 +152,11 @@ Reading pref.tcl
 # 
 # Top level modules:
 # 	top
-# End time: 10:21:03 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:36 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=timer_t_test" 
-# Start time: 10:21:03 on Apr 26,2026
+# Start time: 17:35:36 on Apr 26,2026
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
 # ** Note: (vopt-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
@@ -249,11 +249,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:11 on Apr 26,2026, Elapsed time: 0:00:08
+# End time: 17:35:43 on Apr 26,2026, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 2
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=random_t_test" 
-# Start time: 10:21:11 on Apr 26,2026
+# Start time: 17:35:43 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -305,24 +305,47 @@ Reading pref.tcl
 # include_coverage not located
 #   did you mean recording_detail?
 # ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
-# UVM_ERROR abv/./abv_timer.sv(86) @ 60 ns: reporter [ABV] OOR response not generated for invalid address
-# UVM_ERROR abv/./abv_timer.sv(86) @ 80 ns: reporter [ABV] OOR response not generated for invalid address
-# UVM_ERROR abv/./abv_timer.sv(86) @ 90 ns: reporter [ABV] OOR response not generated for invalid address
-# UVM_ERROR abv/./abv_timer.sv(86) @ 100 ns: reporter [ABV] OOR response not generated for invalid address
-# UVM_ERROR abv/./abv_timer.sv(86) @ 110 ns: reporter [ABV] OOR response not generated for invalid address
-# UVM_ERROR abv/./abv_timer.sv(86) @ 120 ns: reporter [ABV] OOR response not generated for invalid address
+# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 120 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
+# -----------------------------------------------
+# Name          Type                 Size  Value 
+# -----------------------------------------------
+# gold: 110 ns  timer_t_transaction  -     @901  
+#   begin_time  time                 64    110 ns
+#   RST         integral             1     'h1   
+#   REQUEST     integral             2     'h0   
+#   ADDRESS     integral             32    'h4   
+#   DATA_IN     integral             32    'hf   
+#   RESPONSE    integral             3     'h1   
+#   DATA_OUT    integral             32    'h0   
+#   P_IRQ       integral             1     'h1   
+# -----------------------------------------------
+# 
+# ---------------------------------------------
+# Name         Type                 Size  Value
+# ---------------------------------------------
+# dut: 110 ns  timer_t_transaction  -     @893 
+#   RST        integral             1     'h1  
+#   REQUEST    integral             2     'h0  
+#   ADDRESS    integral             32    'h4  
+#   DATA_IN    integral             32    'hf  
+#   RESPONSE   integral             3     'h1  
+#   DATA_OUT   integral             32    'h0  
+#   P_IRQ      integral             1     'h0  
+# ---------------------------------------------
+# 
+# 
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 130 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO env_lib/.//scoreboard.svh(83) @ 130 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is OK, 0/12 , mismatches!
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 130 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is FAIL, 1/12 , mismatches!
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
 # UVM_INFO :    5
 # UVM_WARNING :    0
-# UVM_ERROR :    6
+# UVM_ERROR :    1
 # UVM_FATAL :    0
 # ** Report counts by id
-# [ABV]     6
+# [Comparison in SCOREBOARD:]     1
 # [FINAL STATUS]     1
 # [Questa UVM]     2
 # [RNTST]     1
@@ -334,11 +357,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:12 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:45 on Apr 26,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=autorestart_t_test" 
-# Start time: 10:21:12 on Apr 26,2026
+# Start time: 17:35:45 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -412,11 +435,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:14 on Apr 26,2026, Elapsed time: 0:00:02
+# End time: 17:35:47 on Apr 26,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=oneshot_t_test" 
-# Start time: 10:21:14 on Apr 26,2026
+# Start time: 17:35:47 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -490,11 +513,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:15 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:48 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=disabled_t_test" 
-# Start time: 10:21:15 on Apr 26,2026
+# Start time: 17:35:48 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -568,11 +591,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:17 on Apr 26,2026, Elapsed time: 0:00:02
+# End time: 17:35:50 on Apr 26,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=continuous_t_test" 
-# Start time: 10:21:17 on Apr 26,2026
+# Start time: 17:35:50 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -646,11 +669,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:18 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:51 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=mode_transition_t_test" 
-# Start time: 10:21:18 on Apr 26,2026
+# Start time: 17:35:51 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -724,11 +747,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:20 on Apr 26,2026, Elapsed time: 0:00:02
+# End time: 17:35:53 on Apr 26,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=full_access_t_test" 
-# Start time: 10:21:20 on Apr 26,2026
+# Start time: 17:35:53 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -802,11 +825,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:22 on Apr 26,2026, Elapsed time: 0:00:02
+# End time: 17:35:54 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=reset_stress_t_test" 
-# Start time: 10:21:22 on Apr 26,2026
+# Start time: 17:35:54 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -880,11 +903,11 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:23 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:35:56 on Apr 26,2026, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=edge_cases_t_test" 
-# Start time: 10:21:23 on Apr 26,2026
+# Start time: 17:35:56 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -936,7 +959,6 @@ Reading pref.tcl
 # include_coverage not located
 #   did you mean recording_detail?
 # ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
-# UVM_ERROR abv/./abv_timer.sv(86) @ 60 ns: reporter [ABV] OOR response not generated for invalid address
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 70 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # UVM_INFO env_lib/.//scoreboard.svh(83) @ 70 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is OK, 0/6 , mismatches!
 # 
@@ -945,10 +967,9 @@ Reading pref.tcl
 # ** Report counts by severity
 # UVM_INFO :    5
 # UVM_WARNING :    0
-# UVM_ERROR :    1
+# UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [ABV]     1
 # [FINAL STATUS]     1
 # [Questa UVM]     2
 # [RNTST]     1
@@ -960,11 +981,89 @@ Reading pref.tcl
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:25 on Apr 26,2026, Elapsed time: 0:00:02
+# End time: 17:35:58 on Apr 26,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
+# vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=addr_bus_branch_cover_t_test" 
+# Start time: 17:35:58 on Apr 26,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.itimer_itf(fast)
+# Loading work.dut_internal_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sv_param_pkg(fast)
+# Loading work.sv_timer_t_agent_pkg(fast)
+# Loading work.ifc_sv_unit(fast)
+# Loading work.registers_pkg(fast)
+# Loading work.sv_timer_t_gm_pkg(fast)
+# Loading work.sv_timer_t_env_pkg(fast)
+# Loading work.sv_timer_t_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading std.standard
+# Loading verilog.vl_resolve(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading verilog.vl_types(body)
+# Loading work.timer(rtl)#1
+# Loading work.abv_timer_sv_unit(fast)
+# Loading work.abv_timer(fast)
+# Loading work.dut_internal_if(fast__2)
+# Loading /mnt/data/tools/questa/questasim.2025/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test addr_bus_branch_cover_t_test...
+# include_coverage not located
+#   did you mean recording_detail?
+# ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 390 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 390 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is OK, 0/38 , mismatches!
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [FINAL STATUS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 390 ns  Iteration: 64  Instance: /top
+# Break in Task uvm_root::run_test at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# 
+# Coverage saving has been started
+# Coverage database has been saved successfully.
+# End time: 17:35:59 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 # ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
 # vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=full_cov_t_test" 
-# Start time: 10:21:25 on Apr 26,2026
+# Start time: 17:35:59 on Apr 26,2026
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.itimer_itf(fast)
@@ -1016,426 +1115,457 @@ Reading pref.tcl
 # include_coverage not located
 #   did you mean recording_detail?
 # ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 250 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 240 ns  timer_t_transaction  -     @1061 
-#   begin_time  time                 64    240 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h2   
-#   ADDRESS     integral             32    'h0   
-#   DATA_IN     integral             32    'h18  
-#   RESPONSE    integral             3     'h1   
-#   DATA_OUT    integral             32    'h6   
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 240 ns  timer_t_transaction  -     @1053
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h2  
-#   ADDRESS    integral             32    'h0  
-#   DATA_IN    integral             32    'h18 
-#   RESPONSE   integral             3     'h1  
-#   DATA_OUT   integral             32    'hb  
-#   P_IRQ      integral             1     'h0  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 300 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 290 ns  timer_t_transaction  -     @1121 
-#   begin_time  time                 64    290 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h1   
-#   ADDRESS     integral             32    'h8   
-#   DATA_IN     integral             32    'h12  
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 290 ns  timer_t_transaction  -     @1113
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h1  
-#   ADDRESS    integral             32    'h8  
-#   DATA_IN    integral             32    'h12 
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h1  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 410 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 400 ns  timer_t_transaction  -     @1253 
-#   begin_time  time                 64    400 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h2   
-#   ADDRESS     integral             32    'h0   
-#   DATA_IN     integral             32    'h27  
-#   RESPONSE    integral             3     'h1   
-#   DATA_OUT    integral             32    'h1b  
-#   P_IRQ       integral             1     'h1   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 400 ns  timer_t_transaction  -     @1245
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h2  
-#   ADDRESS    integral             32    'h0  
-#   DATA_IN    integral             32    'h27 
-#   RESPONSE   integral             3     'h1  
-#   DATA_OUT   integral             32    'h3  
-#   P_IRQ      integral             1     'h0  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 570 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 560 ns  timer_t_transaction  -     @1445 
-#   begin_time  time                 64    560 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h2   
-#   ADDRESS     integral             32    'h0   
-#   DATA_IN     integral             32    'h35  
-#   RESPONSE    integral             3     'h1   
-#   DATA_OUT    integral             32    'h2c  
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 560 ns  timer_t_transaction  -     @1437
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h2  
-#   ADDRESS    integral             32    'h0  
-#   DATA_IN    integral             32    'h35 
-#   RESPONSE   integral             3     'h1  
-#   DATA_OUT   integral             32    'h35 
-#   P_IRQ      integral             1     'h0  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 760 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 750 ns  timer_t_transaction  -     @1677 
-#   begin_time  time                 64    750 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h0   
-#   ADDRESS     integral             32    'h4   
-#   DATA_IN     integral             32    'h3   
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 750 ns  timer_t_transaction  -     @1669
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h0  
-#   ADDRESS    integral             32    'h4  
-#   DATA_IN    integral             32    'h3  
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h1  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 770 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 760 ns  timer_t_transaction  -     @1689 
-#   begin_time  time                 64    760 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h0   
-#   ADDRESS     integral             32    'h4   
-#   DATA_IN     integral             32    'h3   
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h1   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 760 ns  timer_t_transaction  -     @1681
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h0  
-#   ADDRESS    integral             32    'h4  
-#   DATA_IN    integral             32    'h3  
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h0  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 800 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 790 ns  timer_t_transaction  -     @1725 
-#   begin_time  time                 64    790 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h0   
-#   ADDRESS     integral             32    'h4   
-#   DATA_IN     integral             32    'h3   
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 790 ns  timer_t_transaction  -     @1717
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h0  
-#   ADDRESS    integral             32    'h4  
-#   DATA_IN    integral             32    'h3  
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h1  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 810 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 800 ns  timer_t_transaction  -     @1737 
-#   begin_time  time                 64    800 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h0   
-#   ADDRESS     integral             32    'h4   
-#   DATA_IN     integral             32    'h3   
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h1   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 800 ns  timer_t_transaction  -     @1729
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h0  
-#   ADDRESS    integral             32    'h4  
-#   DATA_IN    integral             32    'h3  
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h0  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 840 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 830 ns  timer_t_transaction  -     @1773 
-#   begin_time  time                 64    830 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h2   
-#   ADDRESS     integral             32    'h0   
-#   DATA_IN     integral             32    'h0   
-#   RESPONSE    integral             3     'h1   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 830 ns  timer_t_transaction  -     @1765
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h2  
-#   ADDRESS    integral             32    'h0  
-#   DATA_IN    integral             32    'h0  
-#   RESPONSE   integral             3     'h1  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h1  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 890 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 880 ns  timer_t_transaction  -     @1833 
-#   begin_time  time                 64    880 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h0   
-#   ADDRESS     integral             32    'h4   
-#   DATA_IN     integral             32    'h3   
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h0   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 880 ns  timer_t_transaction  -     @1825
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h0  
-#   ADDRESS    integral             32    'h4  
-#   DATA_IN    integral             32    'h3  
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h1  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 900 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -----------------------------------------------
-# Name          Type                 Size  Value 
-# -----------------------------------------------
-# gold: 890 ns  timer_t_transaction  -     @1845 
-#   begin_time  time                 64    890 ns
-#   RST         integral             1     'h1   
-#   REQUEST     integral             2     'h0   
-#   ADDRESS     integral             32    'h4   
-#   DATA_IN     integral             32    'h3   
-#   RESPONSE    integral             3     'h0   
-#   DATA_OUT    integral             32    'h0   
-#   P_IRQ       integral             1     'h1   
-# -----------------------------------------------
-# 
-# ---------------------------------------------
-# Name         Type                 Size  Value
-# ---------------------------------------------
-# dut: 890 ns  timer_t_transaction  -     @1837
-#   RST        integral             1     'h1  
-#   REQUEST    integral             2     'h0  
-#   ADDRESS    integral             32    'h4  
-#   DATA_IN    integral             32    'h3  
-#   RESPONSE   integral             3     'h0  
-#   DATA_OUT   integral             32    'h0  
-#   P_IRQ      integral             1     'h0  
-# ---------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 1020 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -------------------------------------------------
-# Name           Type                 Size  Value  
-# -------------------------------------------------
-# gold: 1010 ns  timer_t_transaction  -     @1989  
-#   begin_time   time                 64    1010 ns
-#   RST          integral             1     'h1    
-#   REQUEST      integral             2     'h0    
-#   ADDRESS      integral             32    'h4    
-#   DATA_IN      integral             32    'h3    
-#   RESPONSE     integral             3     'h0    
-#   DATA_OUT     integral             32    'h0    
-#   P_IRQ        integral             1     'h0    
-# -------------------------------------------------
-# 
-# ----------------------------------------------
-# Name          Type                 Size  Value
-# ----------------------------------------------
-# dut: 1010 ns  timer_t_transaction  -     @1981
-#   RST         integral             1     'h1  
-#   REQUEST     integral             2     'h0  
-#   ADDRESS     integral             32    'h4  
-#   DATA_IN     integral             32    'h3  
-#   RESPONSE    integral             3     'h0  
-#   DATA_OUT    integral             32    'h0  
-#   P_IRQ       integral             1     'h1  
-# ----------------------------------------------
-# 
-# 
-# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 1030 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
-# -------------------------------------------------
-# Name           Type                 Size  Value  
-# -------------------------------------------------
-# gold: 1020 ns  timer_t_transaction  -     @2001  
-#   begin_time   time                 64    1020 ns
-#   RST          integral             1     'h1    
-#   REQUEST      integral             2     'h0    
-#   ADDRESS      integral             32    'h4    
-#   DATA_IN      integral             32    'h3    
-#   RESPONSE     integral             3     'h0    
-#   DATA_OUT     integral             32    'h0    
-#   P_IRQ        integral             1     'h1    
-# -------------------------------------------------
-# 
-# ----------------------------------------------
-# Name          Type                 Size  Value
-# ----------------------------------------------
-# dut: 1020 ns  timer_t_transaction  -     @1993
-#   RST         integral             1     'h1  
-#   REQUEST     integral             2     'h0  
-#   ADDRESS     integral             32    'h4  
-#   DATA_IN     integral             32    'h3  
-#   RESPONSE    integral             3     'h0  
-#   DATA_OUT    integral             32    'h0  
-#   P_IRQ       integral             1     'h0  
-# ----------------------------------------------
-# 
-# 
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1080 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO env_lib/.//scoreboard.svh(83) @ 1080 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is FAIL, 13/107 , mismatches!
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 920 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 920 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is OK, 0/91 , mismatches!
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
 # UVM_INFO :    5
 # UVM_WARNING :    0
-# UVM_ERROR :   13
+# UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [Comparison in SCOREBOARD:]    13
 # [FINAL STATUS]     1
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
 # ** Note: $finish    : /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 1080 ns  Iteration: 64  Instance: /top
+#    Time: 920 ns  Iteration: 64  Instance: /top
 # Break in Task uvm_root::run_test at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 # Stopped at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
 # 
 # Coverage saving has been started
 # Coverage database has been saved successfully.
-# End time: 10:21:26 on Apr 26,2026, Elapsed time: 0:00:01
+# End time: 17:36:01 on Apr 26,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
+# vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=formal_t_test" 
+# Start time: 17:36:01 on Apr 26,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.itimer_itf(fast)
+# Loading work.dut_internal_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sv_param_pkg(fast)
+# Loading work.sv_timer_t_agent_pkg(fast)
+# Loading work.ifc_sv_unit(fast)
+# Loading work.registers_pkg(fast)
+# Loading work.sv_timer_t_gm_pkg(fast)
+# Loading work.sv_timer_t_env_pkg(fast)
+# Loading work.sv_timer_t_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading std.standard
+# Loading verilog.vl_resolve(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading verilog.vl_types(body)
+# Loading work.timer(rtl)#1
+# Loading work.abv_timer_sv_unit(fast)
+# Loading work.abv_timer(fast)
+# Loading work.dut_internal_if(fast__2)
+# Loading /mnt/data/tools/questa/questasim.2025/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test formal_t_test...
+# include_coverage not located
+#   did you mean recording_detail?
+# ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1270 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 1270 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is OK, 0/126 , mismatches!
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [FINAL STATUS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1270 ns  Iteration: 64  Instance: /top
+# Break in Task uvm_root::run_test at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# 
+# Coverage saving has been started
+# Coverage database has been saved successfully.
+# End time: 17:36:02 on Apr 26,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
+# vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=reg_t_test" 
+# Start time: 17:36:02 on Apr 26,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.itimer_itf(fast)
+# Loading work.dut_internal_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sv_param_pkg(fast)
+# Loading work.sv_timer_t_agent_pkg(fast)
+# Loading work.ifc_sv_unit(fast)
+# Loading work.registers_pkg(fast)
+# Loading work.sv_timer_t_gm_pkg(fast)
+# Loading work.sv_timer_t_env_pkg(fast)
+# Loading work.sv_timer_t_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading std.standard
+# Loading verilog.vl_resolve(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading verilog.vl_types(body)
+# Loading work.timer(rtl)#1
+# Loading work.abv_timer_sv_unit(fast)
+# Loading work.abv_timer(fast)
+# Loading work.dut_internal_if(fast__2)
+# Loading /mnt/data/tools/questa/questasim.2025/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test reg_t_test...
+# include_coverage not located
+#   did you mean recording_detail?
+# ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_INFO regmodel//reg_adapter.svh(32) @ 30 ns: reporter [reg_adapter] reg2bus rw::kind: UVM_WRITE, addr: 0x8, data: 0x1, status: UVM_IS_OK
+# UVM_INFO regmodel//reg_adapter.svh(54) @ 40 ns: reporter [reg_adapter] bus2reg rw::kind: UVM_WRITE, addr: 0x8, data: 0x1, status: UVM_IS_OK
+# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 50 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
+# ----------------------------------------------
+# Name          Type                 Size  Value
+# ----------------------------------------------
+# gold: 40 ns   timer_t_transaction  -     @829 
+#   begin_time  time                 64    40 ns
+#   RST         integral             1     'h0  
+#   REQUEST     integral             2     'h0  
+#   ADDRESS     integral             32    'h0  
+#   DATA_IN     integral             32    'h0  
+#   RESPONSE    integral             3     'h1  
+#   DATA_OUT    integral             32    'h0  
+#   P_IRQ       integral             1     'h1  
+# ----------------------------------------------
+# 
+# --------------------------------------------
+# Name        Type                 Size  Value
+# --------------------------------------------
+# dut: 40 ns  timer_t_transaction  -     @821 
+#   RST       integral             1     'h0  
+#   REQUEST   integral             2     'h0  
+#   ADDRESS   integral             32    'h0  
+#   DATA_IN   integral             32    'h0  
+#   RESPONSE  integral             3     'h0  
+#   DATA_OUT  integral             32    'h0  
+#   P_IRQ     integral             1     'h0  
+# --------------------------------------------
+# 
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 230 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 230 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is FAIL, 1/22 , mismatches!
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    7
+# UVM_WARNING :    0
+# UVM_ERROR :    1
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Comparison in SCOREBOARD:]     1
+# [FINAL STATUS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [reg_adapter]     2
+# ** Note: $finish    : /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 230 ns  Iteration: 64  Instance: /top
+# Break in Task uvm_root::run_test at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# 
+# Coverage saving has been started
+# Coverage database has been saved successfully.
+# End time: 17:36:04 on Apr 26,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
+# vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=muj_prvni_t_test" 
+# Start time: 17:36:04 on Apr 26,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.itimer_itf(fast)
+# Loading work.dut_internal_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sv_param_pkg(fast)
+# Loading work.sv_timer_t_agent_pkg(fast)
+# Loading work.ifc_sv_unit(fast)
+# Loading work.registers_pkg(fast)
+# Loading work.sv_timer_t_gm_pkg(fast)
+# Loading work.sv_timer_t_env_pkg(fast)
+# Loading work.sv_timer_t_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading std.standard
+# Loading verilog.vl_resolve(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading verilog.vl_types(body)
+# Loading work.timer(rtl)#1
+# Loading work.abv_timer_sv_unit(fast)
+# Loading work.abv_timer(fast)
+# Loading work.dut_internal_if(fast__2)
+# Loading /mnt/data/tools/questa/questasim.2025/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test muj_prvni_t_test...
+# include_coverage not located
+#   did you mean recording_detail?
+# ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 80 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
+# ----------------------------------------------
+# Name          Type                 Size  Value
+# ----------------------------------------------
+# gold: 70 ns   timer_t_transaction  -     @873 
+#   begin_time  time                 64    70 ns
+#   RST         integral             1     'h1  
+#   REQUEST     integral             2     'h2  
+#   ADDRESS     integral             32    'h8  
+#   DATA_IN     integral             32    'h2  
+#   RESPONSE    integral             3     'h1  
+#   DATA_OUT    integral             32    'h0  
+#   P_IRQ       integral             1     'h1  
+# ----------------------------------------------
+# 
+# --------------------------------------------
+# Name        Type                 Size  Value
+# --------------------------------------------
+# dut: 70 ns  timer_t_transaction  -     @865 
+#   RST       integral             1     'h1  
+#   REQUEST   integral             2     'h2  
+#   ADDRESS   integral             32    'h8  
+#   DATA_IN   integral             32    'h2  
+#   RESPONSE  integral             3     'h1  
+#   DATA_OUT  integral             32    'h0  
+#   P_IRQ     integral             1     'h0  
+# --------------------------------------------
+# 
+# 
+# UVM_ERROR env_lib/.//scoreboard.svh(58) @ 90 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [Comparison in SCOREBOARD:] Found miscompare between GM and DUT:
+# ----------------------------------------------
+# Name          Type                 Size  Value
+# ----------------------------------------------
+# gold: 80 ns   timer_t_transaction  -     @885 
+#   begin_time  time                 64    80 ns
+#   RST         integral             1     'h1  
+#   REQUEST     integral             2     'h2  
+#   ADDRESS     integral             32    'h8  
+#   DATA_IN     integral             32    'h3  
+#   RESPONSE    integral             3     'h1  
+#   DATA_OUT    integral             32    'h0  
+#   P_IRQ       integral             1     'h0  
+# ----------------------------------------------
+# 
+# --------------------------------------------
+# Name        Type                 Size  Value
+# --------------------------------------------
+# dut: 80 ns  timer_t_transaction  -     @877 
+#   RST       integral             1     'h1  
+#   REQUEST   integral             2     'h2  
+#   ADDRESS   integral             32    'h8  
+#   DATA_IN   integral             32    'h3  
+#   RESPONSE  integral             3     'h1  
+#   DATA_OUT  integral             32    'h0  
+#   P_IRQ     integral             1     'h1  
+# --------------------------------------------
+# 
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 90 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 90 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is FAIL, 2/8 , mismatches!
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    2
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Comparison in SCOREBOARD:]     2
+# [FINAL STATUS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 90 ns  Iteration: 64  Instance: /top
+# Break in Task uvm_root::run_test at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# 
+# Coverage saving has been started
+# Coverage database has been saved successfully.
+# End time: 17:36:06 on Apr 26,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# ** Note: (vsim-220) '/mnt/data/tools/questa/questasim.2025/questa.ini' is used as the ini file.
+# vsim -voptargs="-access=rw+/. +acc=a" -suppress 12130 -assertdebug -coverage -t 1ps -lib work top "+UVM_TESTNAME=continous_t_test" 
+# Start time: 17:36:06 on Apr 26,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.itimer_itf(fast)
+# Loading work.dut_internal_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.sv_param_pkg(fast)
+# Loading work.sv_timer_t_agent_pkg(fast)
+# Loading work.ifc_sv_unit(fast)
+# Loading work.registers_pkg(fast)
+# Loading work.sv_timer_t_gm_pkg(fast)
+# Loading work.sv_timer_t_env_pkg(fast)
+# Loading work.sv_timer_t_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading std.standard
+# Loading verilog.vl_resolve(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading verilog.vl_types(body)
+# Loading work.timer(rtl)#1
+# Loading work.abv_timer_sv_unit(fast)
+# Loading work.abv_timer(fast)
+# Loading work.dut_internal_if(fast__2)
+# Loading /mnt/data/tools/questa/questasim.2025/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0 ns: reporter [RNTST] Running test continous_t_test...
+# include_coverage not located
+#   did you mean recording_detail?
+# ** Warning: In instance '\/sv_timer_t_agent_pkg::timer_t_coverage::FunctionalCoverage ' the 'option.per_instance' is set to '0' (false). Assignment to members 'weight', 'goal' and 'comment' of 'option' would not have any effect.
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 260 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO env_lib/.//scoreboard.svh(83) @ 260 ns: uvm_test_top.m_timer_t_env_h.m_scoreboard_h [FINAL STATUS] The result for timer VERIFICATION is OK, 0/25 , mismatches!
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    5
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [FINAL STATUS]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 260 ns  Iteration: 64  Instance: /top
+# Break in Task uvm_root::run_test at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at /mnt/data/tools/questa/questasim.2025/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# 
+# Coverage saving has been started
+# Coverage database has been saved successfully.
+# End time: 17:36:07 on Apr 26,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 # QuestaSim-64 vcover 2025.3 Coverage Utility 2025.09 Sep 15 2025
-# Start time: 10:21:26 on Apr 26,2026
-# vcover merge ./ucdb/final.ucdb ./ucdb/oneshot_t_test.ucdb ./ucdb/mode_transition_t_test.ucdb ./ucdb/timer_t_test.ucdb ./ucdb/random_t_test.ucdb ./ucdb/full_access_t_test.ucdb ./ucdb/reset_stress_t_test.ucdb ./ucdb/autorestart_t_test.ucdb ./ucdb/edge_cases_t_test.ucdb ./ucdb/formal_t_test.ucdb ./ucdb/full_cov_t_test.ucdb ./ucdb/disabled_t_test.ucdb ./ucdb/continuous_t_test.ucdb -64 
+# Start time: 17:36:07 on Apr 26,2026
+# vcover merge ./ucdb/final.ucdb ./ucdb/oneshot_t_test.ucdb ./ucdb/mode_transition_t_test.ucdb ./ucdb/timer_t_test.ucdb ./ucdb/random_t_test.ucdb ./ucdb/full_access_t_test.ucdb ./ucdb/ADDR_BUS_BRANCH_COVER_TEST.ucdb ./ucdb/muj_prvni_t_test.ucdb ./ucdb/addr_bus_branch_cover_t_test.ucdb ./ucdb/reset_stress_t_test.ucdb ./ucdb/continous_t_test.ucdb ./ucdb/autorestart_t_test.ucdb ./ucdb/reg_t_test.ucdb ./ucdb/edge_cases_t_test.ucdb ./ucdb/formal_t_test.ucdb ./ucdb/full_cov_t_test.ucdb ./ucdb/disabled_t_test.ucdb ./ucdb/continuous_t_test.ucdb ./ucdb/full_cov_test.ucdb -64 
 # QuestaSim-64 vcover 2025.3 Coverage Utility 2025.09 Sep 15 2025
 # Merging file ./ucdb/oneshot_t_test.ucdb
 # Merging file ./ucdb/mode_transition_t_test.ucdb
 # Merging file ./ucdb/timer_t_test.ucdb
 # Merging file ./ucdb/random_t_test.ucdb
 # Merging file ./ucdb/full_access_t_test.ucdb
+# Merging file ./ucdb/ADDR_BUS_BRANCH_COVER_TEST.ucdb
+# Merging file ./ucdb/muj_prvni_t_test.ucdb
+# Merging file ./ucdb/addr_bus_branch_cover_t_test.ucdb
 # Merging file ./ucdb/reset_stress_t_test.ucdb
+# Merging file ./ucdb/continous_t_test.ucdb
 # Merging file ./ucdb/autorestart_t_test.ucdb
+# Merging file ./ucdb/reg_t_test.ucdb
 # Merging file ./ucdb/edge_cases_t_test.ucdb
 # Merging file ./ucdb/formal_t_test.ucdb
-# ** Warning: (vcover-6820) Source code mismatch detected while merging ucdb file ./ucdb/formal_t_test.ucdb, skipping code coverage merge for design unit work.timer(rtl) defined in file ../rtl/timer_fvs.vhd, line 24
 # Merging file ./ucdb/full_cov_t_test.ucdb
 # Merging file ./ucdb/disabled_t_test.ucdb
 # Merging file ./ucdb/continuous_t_test.ucdb
+# Merging file ./ucdb/full_cov_test.ucdb
 # Writing merged result to ./ucdb/final.ucdb
 # 
-# End time: 10:21:27 on Apr 26,2026, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 17:36:07 on Apr 26,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

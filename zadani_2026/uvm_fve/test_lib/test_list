@@ -10,3 +10,6 @@ reset_stress_t_test
 edge_cases_t_test
 addr_bus_branch_cover_t_test
 full_cov_t_test
+formal_t_test
+reg_t_test
+continous_t_test
