@@ -1,10 +1,10 @@
-# TIMER Module Verification
-
-## Verification Goal
-
-The goal of this project was to verify the RTL implementation of the timer against the assignment specification. The verification focused on registers `cnt_reg`, `cmp_reg`, `ctrl_reg` and `cycle_cnt`, bus interface responses, interrupt generation on `P_IRQ`, reset behavior, and transitions between the timer modes `DISABLED`, `AUTO_RESTART`, `ONE_SHOT` and `CONTINOUS`.
+# TIMER Module Verification Report
 
 ## Verification Plan
+
+The detailed verification plan is stored separately in [`verification_plan.xlsx`](verification_plan.xlsx).
+
+### Summary:
 
 All timer modes were verified:
 
@@ -16,6 +16,16 @@ All timer modes were verified:
 At the interface level, requests `CP_REQ_NONE`, `CP_REQ_READ`, `CP_REQ_WRITE` and `CP_REQ_RESERVED` were verified, including `RESPONSE` behavior, reads and writes to all register addresses, accesses outside the timer address space, unaligned addresses and unused aligned addresses inside the timer address space.
 
 At the structural level, statement, branch, condition and assertion coverage were tracked. The additional test `addr_bus_branch_cover_t_test` was added to cover the read branch for an unused aligned address inside the timer address space.
+
+## Automatic Test Runner
+
+The script `uvm_fve/test_all.sh` was added to make regression execution easier to read. It takes tests from `test_lib/test_list`, ignores empty lines and lines commented with `#`, and runs the selected tests through the existing `start_verification.sh -run_multiple_tests` flow in one Questa session. During the run it shows a small animated progress line in the terminal.
+
+After the run, the script parses the simulator output and prints a colored summary for each test: `PASSED`, `WARNING` or `FAILED`. The complete log is stored in `automatic_test_logs/full_run.log`, per-test logs are stored in `automatic_test_logs/<test>.log`, and the final summary with failed or warning tests is written to `output.txt`.
+
+Also it is necessary to use updated version of start.tcl script which can parse test_list with commented out tests which is another updated for easier test management.
+
+Im adding this script for potentional use for future colleagues.
 
 ## Tests
 
@@ -38,7 +48,7 @@ The regression test set is listed in `test_lib/test_list`:
 - `muj_prvni_t_test`
 - `continous_t_test`
 
-The additional regression tests cover the assertion/formal-oriented stress scenario, register model frontdoor access, a helper smoke scenario over the mode-setting sequences, and the compatibility alias for the misspelled continuous test name. Older superseded source files, such as `ADDR_BUS_BRANCH_COVER_TEST.svh`, `mujprvnitest.svh` and `mode_transition_test.svh`, are not used directly because their functionality is covered by the renamed or fixed tests listed above.
+The additional regression tests cover the assertion/formal-oriented stress scenario, register model frontdoor access, a helper smoke scenario over the mode-setting sequences. Older superseded source files, such as `mujprvnitest.svh` and `mode_transition_test.svh`, are not used directly because their functionality is covered by the renamed or fixed tests listed above.
 
 The pseudo-random test uses constraints according to the assignment:
 
@@ -86,7 +96,7 @@ The implemented verification suite achieves almost full coverage. Most metrics, 
 
 ## Fixes in `timer_fvs.vhd`
 
-The original implementation did not match the golden model implemented according to the specification. Therefore, the response priority was adjusted to match the expected model behavior, even though this differs from the wording in the assignment. The relevant fixes are around lines 85-95.
+The original implementation did not match the golden model implemented according to the specification. The response priority was adjusted to match the expected model behavior, even though this differs from the wording in the assignment. The relevant fixes are around lines 85-95.
 
 During verification, several RTL details had to be aligned with the expected timer behavior. In `timer_fvs.vhd`, the design now explicitly distinguishes the NONE request `CP_REQ_NONE`, the RESERVED request, unaligned addresses, addresses outside the timer address space and valid accesses with the `ACK` response.
 
@@ -95,3 +105,10 @@ Reads and writes to internal registers are gated by a valid `ACK`. This prevents
 ## Conclusion
 
 The implemented verification suite covers the main timer functional scenarios, bus interface corner cases, reset behavior, all timer modes and transitions between them. In the latest run, neither the scoreboard nor ABV reported any errors.
+
+## AI Disclaimer and Usage
+
+AI was used:
+- To generate shared test_all.sh for further usage by future collegues in this course
+- Format final report for better readability and nicer formating, and also for richer english and clearerr explanations
+- Formating and refactoring of sequence.svh source file and files containing tests
