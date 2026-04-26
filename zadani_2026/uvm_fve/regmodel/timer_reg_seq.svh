@@ -31,7 +31,7 @@ endfunction : new
  * Main body task
  */
 task timer_reg_seq::body();
-  timer_set_mode(2'b01);
+  timer_set_mode(DISABLED);
 endtask : body
 
 /* 

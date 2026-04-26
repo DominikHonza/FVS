@@ -393,6 +393,11 @@ class timer_t_sequence_rand extends timer_t_sequence;
         };
     }
 
+    constraint c_stable_ctrl_write {
+        if ((default_ADDRESS == TIMER_CR) && (default_REQUEST == CP_REQ_WRITE))
+            default_DATA_IN[1:0] == DISABLED;
+    }
+
     // Constructor
     function new(string name = "timer_t_sequence_rand");
         super.new(name);
