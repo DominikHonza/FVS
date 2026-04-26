@@ -72,24 +72,24 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
 
         set_default_outputs(t);
 
-        t.P_IRQ = 0;
+        t.P_IRQ = (ctrl_reg != 2'b00) && (cnt_reg == cmp_reg);
 
         //--------------------------------
         // RESPONSE logic (priority)
         //--------------------------------
 
         t.RESPONSE = response_buffer;
-        if (t.REQUEST == 2'b00)
+        if (t.REQUEST == CP_REQ_NONE)
             current_response = 3'b000; // idle
 
-        else if (t.REQUEST == 2'b11)
+        else if (t.REQUEST == CP_REQ_RESERVED)
             current_response = 3'b011; // error
-
-        else if (t.ADDRESS > 8'h14)
-            current_response = 3'b101; // out of range
 
         else if (t.ADDRESS[1:0] != 2'b00)
             current_response = 3'b100; // unaligned
+
+        else if (t.ADDRESS[ADDR_WIDTH - 1:TIMER_ADDR_SPACE_BITS] != 0)
+            current_response = 3'b101; // out of range
 
         else
             current_response = 3'b001; // acknowledge
@@ -171,8 +171,6 @@ class timer_t_gm extends uvm_subscriber #(timer_t_transaction);//uvm_component;
             //`uvm_info(get_type_name(),$sformatf("%x %x %x",cnt_reg, cmp_reg, ctrl_reg),UVM_LOW)
             if (match) begin
                // `uvm_info(get_type_name(),"AFTER COMPARE",UVM_LOW)
-
-                t.P_IRQ = 1;
 
                 case (ctrl_reg)
 

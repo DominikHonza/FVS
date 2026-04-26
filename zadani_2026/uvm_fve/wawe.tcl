@@ -1,4 +1,10 @@
 # Signals of interfaces.
+proc add_optional_wave { PATH } {
+    if {[catch {add wave $PATH} err]} {
+        puts "Skipping missing wave object: $PATH"
+    }
+}
+
 proc basic { PATH } {
     add wave -noupdate -divider "Basic signals"
     add wave -noupdate -color yellow -label CLK $PATH/CLK
@@ -36,20 +42,20 @@ proc itimer_itf { PATH } {
     add wave -position insertpoint sim:/sv_timer_t_gm_pkg::timer_t_gm::irq_next
     add wave -position insertpoint sim:/sv_timer_t_gm_pkg::timer_t_gm::match
     
-    add wave /top/HDL_DUT_U/abv_timer_module/assert__auto_restart_irq_p
-    add wave /top/HDL_DUT_U/abv_timer_module/a_address_known
-    add wave /top/HDL_DUT_U/abv_timer_module/a_data_in_known
-    add wave /top/HDL_DUT_U/abv_timer_module/a_data_out_known
-    add wave /top/HDL_DUT_U/abv_timer_module/a_oor_response 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_unaligned_response 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_write_read_same_addr 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_ack_response 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_none_idle 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_reserved_error 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_no_wait 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_irq_on_match 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_irq_when_no_match 
-    add wave /top/HDL_DUT_U/abv_timer_module/a_auto_restart_reset_cnt
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/assert__auto_restart_irq_p
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_control_known
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_data_in_known
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_data_out_known
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_oor_response
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_unaligned_response
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_write_read_same_addr
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_ack_response
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_none_idle
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_reserved_error
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_no_wait
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_irq_on_match
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_irq_when_no_match
+    add_optional_wave /top/HDL_DUT_U/abv_timer_module/a_auto_restart_reset_cnt
 
 }
 
