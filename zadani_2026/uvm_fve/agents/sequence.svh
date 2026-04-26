@@ -449,6 +449,25 @@ class timer_t_sequence_invalid_addr extends timer_t_sequence;
 
 endclass
 
+class timer_t_sequence_addr_bus_branch_cover extends timer_t_sequence;
+
+    `uvm_object_utils(timer_t_sequence_addr_bus_branch_cover)
+
+    function new(string name = "timer_t_sequence_addr_bus_branch_cover");
+        super.new(name);
+    endfunction
+
+    task body();
+        default_RST     = ~RST_ACT_LEVEL;
+        default_ADDRESS = 8'h0C;
+        default_REQUEST = CP_REQ_READ;
+        default_DATA_IN = 0;
+
+        create_and_finish_item();
+    endtask
+
+endclass
+
 class timer_t_sequence_cnt_rw_mix extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_cnt_rw_mix)

@@ -8,5 +8,5 @@ mode_transition_t_test
 full_access_t_test
 reset_stress_t_test
 edge_cases_t_test
+ADDR_BUS_BRANCH_COVER_TEST
 full_cov_t_test
-

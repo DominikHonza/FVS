@@ -19,6 +19,7 @@ package sv_timer_t_test_pkg;
     `include "full_access_t_test.svh"
     `include "reset_stress_t_test.svh"
     `include "edge_cases_t_test.svh"
+    `include "ADDR_BUS_BRANCH_COVER_TEST.svh"
     `include "full_cov_t_test.svh"
     `include "formal_t_test.svh"
     `include "reg_t_test.svh"
