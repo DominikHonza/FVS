@@ -362,7 +362,11 @@ class timer_t_sequence_rand extends timer_t_sequence;
             TIMER_CR       := 5,
             TIMER_CYCLE_L  := 2,
             TIMER_CYCLE_H  := 2,
-            (1 << TIMER_ADDR_SPACE_BITS) := 1
+            [32'h0000_0001:32'h0000_0003] :/ 1,
+            [32'h0000_0005:32'h0000_0007] :/ 1,
+            [32'h0000_0009:32'h0000_000F] :/ 1,
+            [32'h0000_0011:32'h0000_0013] :/ 1,
+            [32'h0000_0015:32'hFFFF_FFFF] :/ 1
         };
     }
 
@@ -385,7 +389,7 @@ class timer_t_sequence_rand extends timer_t_sequence;
         default_DATA_IN dist {
             0                         := 10,
             [1:20]                    := 20,
-            [21:(2**DATA_WIDTH-1)]    := 1
+            [21:32'hFFFF_FFFF]        :/ 1
         };
     }
 
