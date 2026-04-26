@@ -15,7 +15,7 @@ class full_cov_t_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Runs the coverage-oriented access sweep and remaining functional coverage sequences.
     task run_phase(uvm_phase phase);
 
         uvm_sequence_base seq;

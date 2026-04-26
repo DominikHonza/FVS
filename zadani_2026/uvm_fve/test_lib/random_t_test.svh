@@ -15,7 +15,7 @@ class random_t_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Runs the constrained pseudo-random transaction sequence after reset.
     task run_phase(uvm_phase phase);
 
         uvm_sequence_base rst_seq;

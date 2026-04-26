@@ -15,7 +15,7 @@ class reserved_req_t_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Sends a single RESERVED request to check error-response handling.
     task run_phase(uvm_phase phase);
 
         uvm_sequence_base seq;

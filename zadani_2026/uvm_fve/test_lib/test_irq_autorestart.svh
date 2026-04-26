@@ -15,7 +15,7 @@ class test_irq_autorestart extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Legacy AUTO_RESTART IRQ scenario built from direct base-sequence transactions.
     task run_phase(uvm_phase phase);
 
     timer_t_sequence seq; // ✅ deklarace MUSÍ být nahoře

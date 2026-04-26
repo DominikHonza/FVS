@@ -15,7 +15,7 @@ class timer_t_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Runs the default reset plus basic AUTO_RESTART timer scenario.
     task run_phase( uvm_phase phase );
         // creation of sequences
         uvm_sequence_base rst_seq = timer_t_sequence_reset::type_id::create( "reset" );

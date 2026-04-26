@@ -15,7 +15,7 @@ class mode_transition_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Legacy mode-transition sketch that switches through the timer modes.
     task run_phase(uvm_phase phase);
 
         phase.raise_objection(this);

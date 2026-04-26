@@ -15,7 +15,7 @@ class reg_t_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Runs a register-model frontdoor access with idle alignment around the RAL transaction.
     task run_phase(uvm_phase phase);
 
     timer_t_sequence_reset rst_seq;

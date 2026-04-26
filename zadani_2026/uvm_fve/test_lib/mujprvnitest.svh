@@ -15,7 +15,7 @@ class muj_prvni_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Legacy smoke flow through reset and all direct mode-setting sequences.
     task run_phase( uvm_phase phase );
         // creation of sequences
         uvm_sequence_base basic_seq = timer_t_sequence_reset::type_id::create( "ttimer_t_sequence_basic" );

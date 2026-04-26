@@ -15,7 +15,7 @@ class reset_stress_t_test extends timer_t_test_base;
         super.build_phase( phase );
     endfunction: build_phase
 
-    // Run - start processing sequences
+    // Runs reset stress by toggling reset during timer interface activity.
     task run_phase(uvm_phase phase);
 
         uvm_sequence_base seq;

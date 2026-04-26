@@ -10,6 +10,7 @@ class addr_bus_branch_cover_t_test extends timer_t_test_base;
         super.build_phase(phase);
     endfunction
 
+    // Runs the unused aligned address branch-cover sequence and remaining functional coverage sequence.
     task run_phase(uvm_phase phase);
         uvm_sequence_base rst_seq;
         uvm_sequence_base branch_seq;

@@ -1,4 +1,4 @@
-// This class represents UVM sequence base for DUT/DUV.
+// Base sequence with common default transaction fields and item creation helper.
 class timer_t_sequence extends uvm_sequence #(timer_t_transaction);
 
     // registration of object tools
@@ -35,7 +35,7 @@ class timer_t_sequence extends uvm_sequence #(timer_t_transaction);
 
 endclass: timer_t_sequence
 
-// This class represents UVM sequence reseting the DUT/DUV.
+// Drives active reset for two cycles.
 class timer_t_sequence_reset extends timer_t_sequence;
 
     // registration of object tools
@@ -58,6 +58,7 @@ class timer_t_sequence_reset extends timer_t_sequence;
     endtask: body
 endclass: timer_t_sequence_reset
 
+// Writes the DISABLED mode into the control register.
 class timer_t_sequence_DISABLED extends timer_t_sequence;
 
     // registration of object tools
@@ -79,6 +80,7 @@ class timer_t_sequence_DISABLED extends timer_t_sequence;
     endtask: body
 endclass: timer_t_sequence_DISABLED
 
+// Writes the AUTO_RESTART mode into the control register.
 class timer_t_sequence_AUTO_RESTART extends timer_t_sequence;
 
     // registration of object tools
@@ -100,6 +102,7 @@ class timer_t_sequence_AUTO_RESTART extends timer_t_sequence;
     endtask: body
 endclass: timer_t_sequence_AUTO_RESTART
 
+// Writes the ONE_SHOT mode into the control register.
 class timer_t_sequence_ONE_SHOT extends timer_t_sequence;
 
     // registration of object tools
@@ -121,6 +124,7 @@ class timer_t_sequence_ONE_SHOT extends timer_t_sequence;
     endtask: body
 endclass: timer_t_sequence_ONE_SHOT
 
+// Writes the CONTINOUS mode into the control register.
 class timer_t_sequence_CONTINOUS extends timer_t_sequence;
 
     // registration of object tools
@@ -142,6 +146,7 @@ class timer_t_sequence_CONTINOUS extends timer_t_sequence;
     endtask: body
 endclass: timer_t_sequence_CONTINOUS
 
+// Sends idle bus cycles so the timer can run without register accesses.
 class timer_t_sequence_run extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_run)
@@ -154,12 +159,12 @@ class timer_t_sequence_run extends timer_t_sequence;
 
         default_RST = ~RST_ACT_LEVEL;
 
-        // žádná operace -> timer běží
+        // No operation, the timer keeps running.
         default_ADDRESS = 0;
         default_REQUEST = CP_REQ_NONE;
         default_DATA_IN = 0;
 
-        // necháme běžet třeba 20 cyklů
+        // Let it run for 20 cycles.
         repeat (20) begin
             create_and_finish_item();
         end
@@ -168,7 +173,7 @@ class timer_t_sequence_run extends timer_t_sequence;
 
 endclass
 
-// This class represents basic UVM sequence 
+// Runs a basic AUTO_RESTART scenario with CNT, CMP and CTRL setup.
 class timer_t_sequence_basic extends timer_t_sequence;
 
     // registration of object tools
@@ -222,6 +227,7 @@ class timer_t_sequence_basic extends timer_t_sequence;
 
 endclass: timer_t_sequence_basic
 
+// Initializes CNT and CMP registers for timer mode tests.
 class timer_t_sequence_setup_regs extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_setup_regs)
@@ -246,6 +252,7 @@ class timer_t_sequence_setup_regs extends timer_t_sequence;
 
 endclass
 
+// Reads all available timer registers.
 class timer_t_sequence_read_all extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_read_all)
@@ -276,6 +283,7 @@ class timer_t_sequence_read_all extends timer_t_sequence;
 
 endclass
 
+// Exercises mode changes between the supported timer modes.
 class timer_t_sequence_mode_switch extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_mode_switch)
@@ -310,6 +318,7 @@ class timer_t_sequence_mode_switch extends timer_t_sequence;
 
 endclass
 
+// Toggles reset during idle and active timer operation.
 class timer_t_sequence_reset_stress extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_reset_stress)
@@ -338,6 +347,7 @@ class timer_t_sequence_reset_stress extends timer_t_sequence;
 
 endclass
 
+// Generates constrained pseudo-random bus transactions.
 class timer_t_sequence_rand extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_rand)
@@ -418,6 +428,7 @@ class timer_t_sequence_rand extends timer_t_sequence;
 
 endclass
 
+// Sends one RESERVED request to check ERROR response handling.
 class timer_t_sequence_reserved extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_reserved)
@@ -437,6 +448,7 @@ class timer_t_sequence_reserved extends timer_t_sequence;
 
 endclass
 
+// Sends an out-of-range write request.
 class timer_t_sequence_invalid_addr extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_invalid_addr)
@@ -449,7 +461,7 @@ class timer_t_sequence_invalid_addr extends timer_t_sequence;
         default_RST     = ~RST_ACT_LEVEL;
         default_REQUEST = CP_REQ_WRITE;
 
-        // mimo validní rozsah
+        // Address outside the valid range.
         default_ADDRESS = (1 << TIMER_ADDR_SPACE_BITS);
         default_DATA_IN = 32'hDEADBEEF;
 
@@ -458,6 +470,7 @@ class timer_t_sequence_invalid_addr extends timer_t_sequence;
 
 endclass
 
+// Accesses an unused aligned address inside the timer address space.
 class timer_t_sequence_addr_bus_branch_cover extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_addr_bus_branch_cover)
@@ -477,6 +490,7 @@ class timer_t_sequence_addr_bus_branch_cover extends timer_t_sequence;
 
 endclass
 
+// Targets functional coverage bins left by the main directed tests.
 class timer_t_sequence_cover_remaining_functional extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_cover_remaining_functional)
@@ -548,6 +562,7 @@ class timer_t_sequence_cover_remaining_functional extends timer_t_sequence;
 
 endclass
 
+// Mixes CNT register writes and reads.
 class timer_t_sequence_cnt_rw_mix extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_cnt_rw_mix)
@@ -576,6 +591,7 @@ class timer_t_sequence_cnt_rw_mix extends timer_t_sequence;
 
 endclass
 
+// Sweeps modes, register addresses and request types for coverage.
 class timer_t_sequence_full_cov extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_full_cov)
@@ -590,7 +606,7 @@ class timer_t_sequence_full_cov extends timer_t_sequence;
         int addrs[5];
         int reqs[3];
 
-        // inicializace
+        // Initialization.
         modes = '{DISABLED, AUTO_RESTART, ONE_SHOT, CONTINOUS};
         addrs = '{TIMER_CNT, TIMER_CMP, TIMER_CR, TIMER_CYCLE_L, TIMER_CYCLE_H};
         reqs  = '{CP_REQ_NONE, CP_REQ_READ, CP_REQ_WRITE};
@@ -599,7 +615,7 @@ class timer_t_sequence_full_cov extends timer_t_sequence;
 
         foreach (modes[i]) begin
 
-            // nastavení módu
+            // Set mode.
             default_ADDRESS = TIMER_CR;
             default_REQUEST = CP_REQ_WRITE;
             default_DATA_IN = modes[i];
@@ -634,6 +650,7 @@ class timer_t_sequence_full_cov extends timer_t_sequence;
 
 endclass
 
+// Generates IRQ in each active timer mode.
 class timer_t_sequence_irq_modes extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_irq_modes)
@@ -651,25 +668,25 @@ class timer_t_sequence_irq_modes extends timer_t_sequence;
 
         foreach (modes[i]) begin
 
-            // nastav mode
+            // Set mode.
             default_ADDRESS = TIMER_CR;
             default_REQUEST = CP_REQ_WRITE;
             default_DATA_IN = modes[i];
             create_and_finish_item();
 
-            // nastav CNT = 0
+            // Set CNT to 0.
             default_ADDRESS = TIMER_CNT;
             default_REQUEST = CP_REQ_WRITE;
             default_DATA_IN = 0;
             create_and_finish_item();
 
-            // nastav CMP = 3
+            // Set CMP to 3.
             default_ADDRESS = TIMER_CMP;
             default_REQUEST = CP_REQ_WRITE;
             default_DATA_IN = 3;
             create_and_finish_item();
 
-            // nech běžet -> IRQ
+            // Let the timer run until IRQ is generated.
             default_REQUEST = CP_REQ_NONE;
             repeat (10) create_and_finish_item();
 
@@ -679,6 +696,7 @@ class timer_t_sequence_irq_modes extends timer_t_sequence;
 
 endclass
 
+// Repeats out-of-range read accesses.
 class timer_t_sequence_oor extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_oor)
@@ -692,7 +710,7 @@ class timer_t_sequence_oor extends timer_t_sequence;
         default_RST = ~RST_ACT_LEVEL;
 
         repeat (5) begin
-            // horní bity ≠ 0 -> OOR
+            // Upper address bits are non-zero, so the access is out of range.
             default_ADDRESS = (1 << TIMER_ADDR_SPACE_BITS); 
 
             default_REQUEST = CP_REQ_READ;
@@ -704,6 +722,7 @@ class timer_t_sequence_oor extends timer_t_sequence;
 
 endclass
 
+// Repeats unaligned write accesses.
 class timer_t_sequence_unaligned extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_unaligned)
@@ -717,7 +736,7 @@ class timer_t_sequence_unaligned extends timer_t_sequence;
         default_RST = ~RST_ACT_LEVEL;
 
         repeat (5) begin
-            default_ADDRESS = TIMER_CNT + 1; // nezarovnané
+            default_ADDRESS = TIMER_CNT + 1; // Unaligned address.
             default_REQUEST = CP_REQ_WRITE;
             default_DATA_IN = 32'h1234;
             create_and_finish_item();
@@ -727,6 +746,7 @@ class timer_t_sequence_unaligned extends timer_t_sequence;
 
 endclass
 
+// Repeats RESERVED requests for ABV and response coverage.
 class timer_t_sequence_reserved_extend extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_reserved)
@@ -750,6 +770,7 @@ class timer_t_sequence_reserved_extend extends timer_t_sequence;
 
 endclass
 
+// Writes CMP and immediately reads it back.
 class timer_t_sequence_write_read extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_write_read)
@@ -769,7 +790,7 @@ class timer_t_sequence_write_read extends timer_t_sequence;
             default_DATA_IN = $urandom_range(1,50);
             create_and_finish_item();
 
-            // OKAMŽITĚ READ (same addr!)
+            // Immediate read from the same address.
             default_ADDRESS = TIMER_CMP;
             default_REQUEST = CP_REQ_READ;
             default_DATA_IN = 0;
