@@ -222,6 +222,30 @@ class timer_t_sequence_basic extends timer_t_sequence;
 
 endclass: timer_t_sequence_basic
 
+class timer_t_sequence_setup_regs extends timer_t_sequence;
+
+    `uvm_object_utils(timer_t_sequence_setup_regs)
+
+    function new(string name = "timer_t_sequence_setup_regs");
+        super.new(name);
+    endfunction
+
+    task body();
+        default_RST = ~RST_ACT_LEVEL;
+
+        default_ADDRESS = TIMER_CNT;
+        default_REQUEST = CP_REQ_WRITE;
+        default_DATA_IN = 32'd0;
+        create_and_finish_item();
+
+        default_ADDRESS = TIMER_CMP;
+        default_REQUEST = CP_REQ_WRITE;
+        default_DATA_IN = 32'd4;
+        create_and_finish_item();
+    endtask
+
+endclass
+
 class timer_t_sequence_read_all extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_read_all)

@@ -84,8 +84,8 @@ begin
     bus_resp_d <=
         CP_RSP_IDLE      when (unsigned(REQUEST) = CP_REQ_NONE) else
         CP_RSP_ERROR     when (unsigned(REQUEST) = CP_REQ_RESERVED) else
-        CP_RSP_OOR       when (unsigned(ADDRESS) > resize(unsigned(TIMER_CYCLE_H), ADDR_WIDTH)) else
         CP_RSP_UNALIGNED when (ADDRESS(1 downto 0) /= "00") else
+        CP_RSP_OOR       when (unsigned(ADDRESS(ADDR_WIDTH - 1 downto TIMER_ADDR_SPACE_BITS)) /= 0) else
         CP_RSP_ACK;
 
     ----------------------------------------------------------------------------------

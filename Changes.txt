@@ -1,0 +1,29 @@
+Changes in zadani_2026/rtl/timer_fvs.vhd
+
+Fixed response priority and out-of-range address detection in bus_resp_d.
+
+Original DUT behavior:
+- Returned CP_RSP_OOR for every address greater than TIMER_CYCLE_H (0x14).
+- Checked OOR before checking 32-bit alignment.
+- This caused addresses that were both out of range and unaligned to return
+  CP_RSP_OOR (5), while the reference model/spec expects CP_RSP_UNALIGNED (4).
+- It also incorrectly treated aligned addresses inside the timer address space,
+  such as 0x18, as OOR instead of accepting the request phase.
+
+New DUT behavior:
+- CP_REQ_NONE still returns CP_RSP_IDLE.
+- CP_REQ_RESERVED still returns CP_RSP_ERROR.
+- Unaligned addresses are checked before OOR and return CP_RSP_UNALIGNED.
+- OOR is detected only when address bits above TIMER_ADDR_SPACE_BITS are nonzero.
+- Otherwise the request returns CP_RSP_ACK.
+
+Changed expression:
+- Removed:
+  CP_RSP_OOR when unsigned(ADDRESS) > resize(unsigned(TIMER_CYCLE_H), ADDR_WIDTH)
+- Added:
+  CP_RSP_OOR when unsigned(ADDRESS(ADDR_WIDTH - 1 downto TIMER_ADDR_SPACE_BITS)) /= 0
+
+Expected effect:
+- random_t_test and edge_cases_t_test should no longer fail with
+  GM RESPONSE = 4 and DUT RESPONSE = 5 for unaligned random addresses.
+- The DUT now matches the intended response priority from the assignment.

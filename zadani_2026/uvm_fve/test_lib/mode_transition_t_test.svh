@@ -30,7 +30,7 @@ class mode_transition_t_test extends timer_t_test_base;
         rst_seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
         // 2. CNT + CMP
-        setup_seq = timer_t_sequence_basic::type_id::create("setup_seq");
+        setup_seq = timer_t_sequence_setup_regs::type_id::create("setup_seq");
         setup_seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
         // 3. CONTINUOUS

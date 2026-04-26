@@ -27,7 +27,7 @@ class full_access_t_test extends timer_t_test_base;
         rst_seq = timer_t_sequence_reset::type_id::create("rst_seq");
         rst_seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
-        basic_seq = timer_t_sequence_basic::type_id::create("basic_seq");
+        basic_seq = timer_t_sequence_setup_regs::type_id::create("basic_seq");
         basic_seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
         read_seq = timer_t_sequence_read_all::type_id::create("read_seq");

@@ -27,7 +27,7 @@ class full_cov_t_test extends timer_t_test_base;
         seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
         // basic setup
-        seq = timer_t_sequence_basic::type_id::create("basic");
+        seq = timer_t_sequence_setup_regs::type_id::create("basic");
         seq.start(m_env_h.m_timer_t_agent_h.m_sequencer_h);
 
         // FULL CROSS
