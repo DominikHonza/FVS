@@ -34,7 +34,7 @@ assert property (auto_restart_irq_p)
     else `uvm_error("ABV", "AUTO_RESTART: IRQ was not asserted when CNT == CMP");
 
 
-// [assert] Ridici signaly (ADDRESS, REQUEST, RESPONSE a P_IRQ) nesmi mit nedefinovane hodnoty (X,Z).
+// [assert] Control signals (ADDRESS, REQUEST, RESPONSE and P_IRQ) must not contain unknown values (X/Z).
 property pr_control_known;
     @(posedge CLK)
     disable iff (RST !== RST_INACT_LEVEL)
@@ -45,7 +45,7 @@ endproperty
 a_control_known: assert property (pr_control_known)
     else `uvm_error("ABV", "Control signal contains X or Z");
 
-// [assert] Čtené (DATA_OUT) a zapisované (DATA_IN) data nesmí mít nedefinované hodnoty (X,Z). Vyhodnocení jen při operacích READ a WRITE! 
+// [assert] Read data (DATA_OUT) and write data (DATA_IN) must not contain unknown values (X/Z). Checked only during READ and WRITE operations.
 property pr_data_in_known;
     @(posedge CLK)
     disable iff (RST !== RST_INACT_LEVEL)
@@ -68,7 +68,7 @@ endproperty
 a_data_out_known: assert property (pr_data_out_known)
     else `uvm_error("ABV", "DATA_OUT contains X/Z during READ");
 
-// [assert + cover] Při zápisu/čtení na/z adresy mimo adresový prostor timeru je v dalším cyklu nastaven RESPONSE OOR. 
+// [assert + cover] A read/write access outside the timer address space must produce an OOR response in the next cycle.
 
 property pr_oor_response;
 
@@ -87,7 +87,7 @@ a_oor_response: assert property (pr_oor_response)
 
 c_oor_response: cover property (pr_oor_response);
 
-// [assert + cover] Při zápisu/čtení na/z nezarovnané adresy v adresovém prostoru timeru je v dalším cyklu nastaven RESPONSE UNALIGNED. 
+// [assert + cover] A read/write access to an unaligned timer address must produce an UNALIGNED response in the next cycle.
 
 property pr_unaligned_response;
 
@@ -107,18 +107,18 @@ a_unaligned_response: assert property (pr_unaligned_response)
 
 c_unaligned_response: cover property (pr_unaligned_response);
 
-// [assert + cover] Kontrola zápisu a čtení v po sobě jdoucích cyklech na stejnou adresu. Pozn. Měla by se pročíst nově zapsaná data.  
+// [assert + cover] Checks write followed by read to the same address in consecutive cycles. The read should return the newly written data.
 
 property pr_write_read_same_addr;
 
     @(posedge CLK)
     disable iff (RST !== RST_INACT_LEVEL)
 
-    // WRITE v minulém cyklu
+    // WRITE in the previous cycle.
     ($past(REQUEST) == CP_REQ_WRITE &&
      REQUEST == CP_REQ_READ &&
 
-     // stejna adresa a read/write registr
+     // Same address and a readable/writable register.
      ADDRESS == $past(ADDRESS) &&
      (ADDRESS == TIMER_CNT || ADDRESS == TIMER_CMP || ADDRESS == TIMER_CR))
 
@@ -133,7 +133,7 @@ a_write_read_same_addr: assert property (pr_write_read_same_addr)
 
 c_write_read_same_addr: cover property (pr_write_read_same_addr);
 
-// [assert + cover] Při zápisu/čtení na/z správnou adresu v adresovém prostoru timeru je v dalším cyklu nastaven RESPONSE ACK. 
+// [assert + cover] A read/write access to a valid timer address must produce an ACK response in the next cycle.
 
 property pr_ack_response;
 
@@ -141,8 +141,8 @@ property pr_ack_response;
     disable iff (RST !== RST_INACT_LEVEL)
 
     ((REQUEST == CP_REQ_READ || REQUEST == CP_REQ_WRITE) &&
-     (ADDRESS <= TIMER_CYCLE_H) &&      // neni OOR
-     (ADDRESS[1:0] == 2'b00))           // není UNALIGNED
+     (ADDRESS <= TIMER_CYCLE_H) &&      // Not OOR.
+     (ADDRESS[1:0] == 2'b00))           // Not UNALIGNED.
 
     |=> (RESPONSE == CP_RSP_ACK);
 
@@ -153,7 +153,7 @@ a_ack_response: assert property (pr_ack_response)
 
 c_ack_response: cover property (pr_ack_response);
 
-// [assert + cover] Odpověď na NONE REQUEST je vždy IDLE. 
+// [assert + cover] A NONE request must always produce an IDLE response.
 
 property pr_none_idle;
 
@@ -171,7 +171,7 @@ a_none_idle: assert property (pr_none_idle)
 
 c_none_idle: cover property (pr_none_idle);
 
-// [assert + cover] Odpověď na RESERVED REQUEST je vždy ERROR. 
+// [assert + cover] A RESERVED request must always produce an ERROR response.
 
 property pr_reserved_error;
 
@@ -189,7 +189,7 @@ a_reserved_error: assert property (pr_reserved_error)
 
 c_reserved_error: cover property (pr_reserved_error);
 
-// [assert] Odpověď WAIT se nesmí nikdy objevit. 
+// [assert] The WAIT response must never appear.
 
 property pr_no_wait;
 
@@ -203,7 +203,7 @@ endproperty
 a_no_wait: assert property (pr_no_wait)
     else `uvm_error("ABV", "WAIT response detected - illegal state");
 
-// [assert + cover] Když se hodnota v cnt_reg rovná hodnotě v cmp_reg, v dalším cyklu je P_IRQ nastaven na 1 (neplatí v módu DISABLED), jinak má hodnotu 0.  
+// [assert + cover] When cnt_reg equals cmp_reg, P_IRQ is asserted in the next cycle unless the timer is DISABLED; otherwise it stays low.
 property pr_irq_on_match;
 
     @(posedge CLK)
@@ -236,7 +236,7 @@ a_irq_when_no_match: assert property (pr_irq_when_no_match)
 
 c_irq_when_no_match: cover property (pr_irq_when_no_match);
 
-// [assert + cover] Když se hodnota v cnt_reg rovná hodnotě v cmp_reg a mód je nastaven na AUTO_RESTART, v dalším cyklu je cnt_reg vynulován. 
+// [assert + cover] When cnt_reg equals cmp_reg in AUTO_RESTART mode, cnt_reg is reset to zero in the next cycle.
 
 property pr_auto_restart_reset_cnt;
 

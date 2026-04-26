@@ -57,6 +57,8 @@ The pseudo-random test uses constraints according to the assignment:
 - `REQUEST`: `NONE`, `READ`, `WRITE`, `RESERVED` have weights 10, 5, 5, 1.
 - `DATA_IN`: value 0 has weight 10, values 1 to 20 have weight 20 and high values are distributed with weight 1.
 
+The pseudorandom sequence was run 10 times.
+
 ## Functional Coverage
 
 The following coverage points were tracked:
