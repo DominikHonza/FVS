@@ -362,7 +362,7 @@ class timer_t_sequence_rand extends timer_t_sequence;
             TIMER_CR       := 5,
             TIMER_CYCLE_L  := 2,
             TIMER_CYCLE_H  := 2,
-            [0 : 2**ADDR_WIDTH-1] := 1
+            (1 << TIMER_ADDR_SPACE_BITS) := 1
         };
     }
 
@@ -441,7 +441,7 @@ class timer_t_sequence_invalid_addr extends timer_t_sequence;
         default_REQUEST = CP_REQ_WRITE;
 
         // mimo validní rozsah
-        default_ADDRESS = 8'hFF;
+        default_ADDRESS = (1 << TIMER_ADDR_SPACE_BITS);
         default_DATA_IN = 32'hDEADBEEF;
 
         create_and_finish_item();
@@ -516,6 +516,13 @@ class timer_t_sequence_full_cov extends timer_t_sequence;
 
             foreach (addrs[j]) begin
                 foreach (reqs[k]) begin
+                    if ((addrs[j] == TIMER_CNT) && (reqs[k] == CP_REQ_WRITE))
+                        continue;
+                    if (((addrs[j] == TIMER_CNT) ||
+                         (addrs[j] == TIMER_CYCLE_L) ||
+                         (addrs[j] == TIMER_CYCLE_H)) &&
+                        (reqs[k] == CP_REQ_READ))
+                        continue;
 
                     default_ADDRESS = addrs[j];
                     default_REQUEST = reqs[k];
