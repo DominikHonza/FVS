@@ -468,6 +468,77 @@ class timer_t_sequence_addr_bus_branch_cover extends timer_t_sequence;
 
 endclass
 
+class timer_t_sequence_cover_remaining_functional extends timer_t_sequence;
+
+    `uvm_object_utils(timer_t_sequence_cover_remaining_functional)
+
+    function new(string name = "timer_t_sequence_cover_remaining_functional");
+        super.new(name);
+    endfunction
+
+    task body();
+        int modes[4];
+        int src_modes[12];
+        int dst_modes[12];
+
+        modes = '{DISABLED, AUTO_RESTART, ONE_SHOT, CONTINOUS};
+        src_modes = '{
+            DISABLED, DISABLED, DISABLED,
+            AUTO_RESTART, AUTO_RESTART, AUTO_RESTART,
+            ONE_SHOT, ONE_SHOT, ONE_SHOT,
+            CONTINOUS, CONTINOUS, CONTINOUS
+        };
+        dst_modes = '{
+            AUTO_RESTART, ONE_SHOT, CONTINOUS,
+            DISABLED, ONE_SHOT, CONTINOUS,
+            DISABLED, AUTO_RESTART, CONTINOUS,
+            AUTO_RESTART, ONE_SHOT, DISABLED
+        };
+        default_RST = ~RST_ACT_LEVEL;
+
+        default_ADDRESS = TIMER_CR;
+        default_REQUEST = CP_REQ_WRITE;
+        default_DATA_IN = DISABLED;
+        create_and_finish_item();
+
+        default_ADDRESS = TIMER_CMP;
+        default_REQUEST = CP_REQ_WRITE;
+        default_DATA_IN = 32'd100;
+        create_and_finish_item();
+
+        default_ADDRESS = TIMER_CNT;
+        default_REQUEST = CP_REQ_WRITE;
+        default_DATA_IN = 32'd0;
+        create_and_finish_item();
+
+        // Hit TIMER_CNT write in every mode for full_cross.
+        foreach (modes[i]) begin
+            default_ADDRESS = TIMER_CR;
+            default_REQUEST = CP_REQ_WRITE;
+            default_DATA_IN = modes[i];
+            create_and_finish_item();
+
+            default_ADDRESS = TIMER_CNT;
+            default_REQUEST = CP_REQ_WRITE;
+            default_DATA_IN = 32'd0;
+            create_and_finish_item();
+        end
+
+        // Explicitly hit all mode transition bins.
+        default_ADDRESS = TIMER_CR;
+        default_REQUEST = CP_REQ_WRITE;
+
+        foreach (src_modes[i]) begin
+            default_DATA_IN = src_modes[i];
+            create_and_finish_item();
+
+            default_DATA_IN = dst_modes[i];
+            create_and_finish_item();
+        end
+    endtask
+
+endclass
+
 class timer_t_sequence_cnt_rw_mix extends timer_t_sequence;
 
     `uvm_object_utils(timer_t_sequence_cnt_rw_mix)
