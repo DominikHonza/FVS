@@ -154,7 +154,7 @@ class timer_t_sequence_run extends timer_t_sequence;
 
         default_RST = ~RST_ACT_LEVEL;
 
-        // žádná operace → timer běží
+        // žádná operace -> timer běží
         default_ADDRESS = 0;
         default_REQUEST = CP_REQ_NONE;
         default_DATA_IN = 0;
@@ -290,19 +290,19 @@ class timer_t_sequence_mode_switch extends timer_t_sequence;
         default_ADDRESS = TIMER_CR;
         default_REQUEST = CP_REQ_WRITE;
 
-        // DISABLED → AUTO
+        // DISABLED -> AUTO
         default_DATA_IN = AUTO_RESTART;
         create_and_finish_item();
 
-        // AUTO → ONE_SHOT
+        // AUTO -> ONE_SHOT
         default_DATA_IN = ONE_SHOT;
         create_and_finish_item();
 
-        // ONE → CONT
+        // ONE -> CONT
         default_DATA_IN = CONTINOUS;
         create_and_finish_item();
 
-        // CONT → DISABLED
+        // CONT -> DISABLED
         default_DATA_IN = DISABLED;
         create_and_finish_item();
 
@@ -596,9 +596,6 @@ class timer_t_sequence_full_cov extends timer_t_sequence;
             default_DATA_IN = modes[i];
             create_and_finish_item();
 
-            // Keep the address/request sweep stable for the scoreboard. Mode
-            // coverage is sampled by the write above; the broad access sweep
-            // does not need the counter to run.
             default_ADDRESS = TIMER_CR;
             default_REQUEST = CP_REQ_WRITE;
             default_DATA_IN = DISABLED;
@@ -663,7 +660,7 @@ class timer_t_sequence_irq_modes extends timer_t_sequence;
             default_DATA_IN = 3;
             create_and_finish_item();
 
-            // nech běžet → IRQ
+            // nech běžet -> IRQ
             default_REQUEST = CP_REQ_NONE;
             repeat (10) create_and_finish_item();
 
@@ -686,7 +683,7 @@ class timer_t_sequence_oor extends timer_t_sequence;
         default_RST = ~RST_ACT_LEVEL;
 
         repeat (5) begin
-            // horní bity ≠ 0 → OOR
+            // horní bity ≠ 0 -> OOR
             default_ADDRESS = (1 << TIMER_ADDR_SPACE_BITS); 
 
             default_REQUEST = CP_REQ_READ;
